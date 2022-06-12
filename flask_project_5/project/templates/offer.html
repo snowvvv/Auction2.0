@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Создание лота</h3>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+{% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}
+    </div>
+{% endif %}
+{% endwith %}
+<div class="control ">
+    <h1></h1><strong> Добавление товара</strong></h1>
+
+    <form method="POST" action="/offer" enctype="multipart/form-data">
+        <input type="text" class="form-control" name="title" id="title" placeholder="Название товара"   >
+        <br><br>
+
+        <input class="form-control" name="description" id="description" placeholder="Введите описание товара">
+        <br><br>
+         <input type="price" class="form-control" name="price" id="price" placeholder="Начальная цена товара (руб)">
+        <div> Пожалуйста, вводите цену без пробелов</div>
+        <br><br>
+            <h6> Введите дату окончания аукциона</h6>
+         <input type="date" name="final_date" id="final_date"
+                        max="2023-06-04" min="2021-05-29">
+        <br><br>
+
+        <a class="button" href="/uploads">Добавьте изображение товара</a>
+
+
+
+
+
+
+            <br><br>
+            <input type=submit class="is-success is-normal"></input>
+    </form>
+</div>
+        {% endblock %} </div></div>

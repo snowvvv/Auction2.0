@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Редактирование лота</h3>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+{% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}
+    </div>
+{% endif %}
+{% endwith %}
+
+
+<div class="control ">
+
+    <h1></h1><strong> Добавление товара</strong></h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="text" class="form-control" name="title" id="title" placeholder="Название товара" value="{{data.title}}"  >
+        <br><br>
+
+        <input class="form-control" name="description" id="description" placeholder="Введите описание товара"  value="{{data.description}}">
+        <br><br>
+         <input type="price" class="form-control" name="price" id="price" placeholder="Начальная цена товара (руб)"  value="{{data.price}}">
+        <br><br>
+            <h6> Введите дату окончания аукциона</h6>
+         <input type="date" name="final_date" id="final_date" value="{{data.final_date}}"
+                        max="2023-06-04" min="2021-05-29">
+        <br><br>
+
+        <a class="button" href="/uploads">Добавьте изображение товара</a>
+
+
+
+
+
+
+            <br><br>
+            <input type=submit class="is-success is-normal">
+    </form>
+</div>
+
+    </div></div>
+ {% endblock %}
